@@ -1,0 +1,19 @@
+
+
+#include <stdio.h>
+unsigned int hammingDistance(unsigned int x, unsigned int y)
+ 
+{
+unsigned int dist = 0;
+unsigned int val = x ^ y; // bitwise XOR of x and y
+ 
+while (val) {
+// count the number of set bits (i.e., 1s) in val dist++;
+val &= val - 1;
+}
+ 
+return dist;
+}
+int main() {
+unsigned int x = 10; unsigned int y = 15;
+printf("%u\n", hammingDistance(x, y)); return 0;
